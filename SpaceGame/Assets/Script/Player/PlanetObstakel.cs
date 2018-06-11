@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PlanetObstakel : MonoBehaviour {
 
+    //private Animator characterDeath;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
+            //characterDeath = collision.gameObject.GetComponent<Animator>();
+            //characterDeath.Play("CharacterDeath");
             SceneManager.LoadScene("gameOver");
             return;
         }

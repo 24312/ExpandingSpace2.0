@@ -46,15 +46,16 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            animations.Play("Jump");
             if (canJump == true)
             {
                 Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
                 canJump = false;
+                animations.Play("Jump");
             }
             else
             {
                 Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                animations.Play("Jump");
             }
             return;
         }
@@ -62,14 +63,15 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                animations.Play("Jump");
                 if (canJump == true)
                 {
+                    animations.Play("Jump");
                     Player.AddForce((17.5f * jetPackJump) * transform.up, ForceMode2D.Impulse);
                     canJump = false;
                 }
                 else
                 {
+                    animations.Play("Jump");
                     Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
                 }
                 return;
@@ -90,6 +92,10 @@ public class PlayerMovement : MonoBehaviour {
                 Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
             }
             return;
+        }
+        if(canJump == true)
+        {
+            animations.Play("Walk");
         }
 
     }

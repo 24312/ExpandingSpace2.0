@@ -9,7 +9,6 @@ public class DestroyerScript : MonoBehaviour {
     public GameObject[] obj;
     public GameObject imageWarning;
     public Transform planetSpawner;
-    private bool corect;
     float _planetSpawner;
     private void Update()
     {
@@ -30,7 +29,7 @@ public class DestroyerScript : MonoBehaviour {
         else if(other.gameObject.tag == "Planet")
         {
             Destroy(other.gameObject);
-            corect = true;
+            //doet build map soms 2 keer of hellemaal niet....
             BuildMap();
             return;
 
@@ -52,18 +51,8 @@ public class DestroyerScript : MonoBehaviour {
     }
     public void BuildMap()
     {
-        if(corect == true)
-        {
             Vector2 spawnLocation = new Vector2(_planetSpawner, 4 - Random.Range(1, 8));
             GameObject holes = Instantiate(obj[Random.Range(0, obj.GetLength(0))], spawnLocation, Quaternion.identity);
-            corect = false;
-            return;
-        }
-        else
-        {
-            return;
-        }
-        
     }
 
 }

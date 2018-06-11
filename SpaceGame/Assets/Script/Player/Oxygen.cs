@@ -12,12 +12,11 @@ public class Oxygen : MonoBehaviour {
     public Slider timerSlide;
     public Animator oxygen;
     public Animator oxygenSpecial;
-
+    private CircleCollider2D oxygenCollider;
     private void FixedUpdate()
     {
         timerSlide.value = oxygenTime;
         roundUp = Mathf.Round(oxygenTime);
-        //oxygenDisplay.text = "Oxygen Left:" + roundUp;
         oxygenTime -= Time.deltaTime;
        
         if(oxygenTime <= 0)
@@ -32,7 +31,9 @@ public class Oxygen : MonoBehaviour {
         {
             oxygen = collision.gameObject.GetComponent<Animator>();
             oxygen.Play("Oxygen");
-            if(oxygenTime <= 30)
+            oxygenCollider = collision.gameObject.GetComponent<CircleCollider2D>();
+            oxygenCollider.enabled = false;
+            if (oxygenTime <= 30)
             {
                 Destroy(collision.gameObject, 0.3f);
                 oxygenTime = 30;
@@ -53,6 +54,8 @@ public class Oxygen : MonoBehaviour {
         }
         if(collision.gameObject.tag == "Oxygen Special")
         {
+            oxygenCollider = collision.gameObject.GetComponent<CircleCollider2D>();
+            oxygenCollider.enabled = false;
             oxygenSpecial = collision.gameObject.GetComponent<Animator>();
             Destroy(collision.gameObject, 0.3f);
             oxygenSpecial.Play("Oxygen");
