@@ -15,21 +15,21 @@ public class restart : MonoBehaviour {
 	
     private void TaskOnClick()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Loading");
     }
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SceneManager.LoadScene("MainGame");
-            SceneManager.LoadScene("MainGame");
+            SceneManager.LoadScene("Loading");
         }
 
         for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                SceneManager.LoadScene("MainGame");
+                SceneManager.LoadScene("Loading");
             }
         }
     }
