@@ -17,7 +17,7 @@ public class start : MonoBehaviour
 
     private void TaskOnClick()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Loading");
     }
 
     private void FixedUpdate()
@@ -25,7 +25,7 @@ public class start : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SceneManager.LoadScene("MainGame");
-            SceneManager.LoadScene("MainGame");
+            SceneManager.LoadScene("Loading");
         }
 
         
