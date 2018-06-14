@@ -8,7 +8,7 @@ public class restart : MonoBehaviour {
 
     public Button btn;
 
-	// Use this for initialization
+	
 	void Start () {
         btn.onClick.AddListener(TaskOnClick);
     }
@@ -24,6 +24,10 @@ public class restart : MonoBehaviour {
             //SceneManager.LoadScene("MainGame");
             SceneManager.LoadScene("Loading");
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97aa26063f984047e822d1da2647d7bee45a8194
 
         for (int i = 0; i < Input.touchCount; ++i)
         {
@@ -32,6 +36,10 @@ public class restart : MonoBehaviour {
                 SceneManager.LoadScene("Loading");
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97aa26063f984047e822d1da2647d7bee45a8194
     }
 
 }
