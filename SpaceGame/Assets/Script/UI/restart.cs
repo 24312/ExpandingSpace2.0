@@ -24,14 +24,6 @@ public class restart : MonoBehaviour {
             //SceneManager.LoadScene("MainGame");
             SceneManager.LoadScene("MainGame");
         }
-
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
-            {
-                SceneManager.LoadScene("MainGame");
-            }
-        }
     }
 
 }

@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour {
         Player = GetComponent<Rigidbody2D>();
         gravity = GetComponent<Gravity>();
         animations = GetComponent<Animator>();
+        playerSpeedLeft = PlayerPrefs.GetFloat("Dificulty", -4);
+        playerSpeedRight = PlayerPrefs.GetFloat("Dificulty", -4);
     }
   
     private void OnCollisionStay2D(Collision2D other)
@@ -42,9 +44,9 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (canJump == true)
             {
@@ -57,42 +59,21 @@ public class PlayerMovement : MonoBehaviour {
                 Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
                 animations.Play("Jump");
             }
-            return;
         }
-        for(int i = 0; i < Input.touchCount; ++i)
-        {
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
-            {
-                if (canJump == true)
-                {
-                    animations.Play("Jump");
-                    Player.AddForce((17.5f * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                    canJump = false;
-                }
-                else
-                {
-                    animations.Play("Jump");
-                    Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                }
-                return;
-            }
-        }
-
-
-        if (Input.GetButton("Fire1"))
-        {
-            animations.Play("Jump");
-            if (canJump == true)
-            {
-                Player.AddForce((17.5f * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                canJump = false;
-            }
-            else
-            {
-                Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-            }
-            return;
-        }
+        //if (Input.GetTouch(0).phase == TouchPhase.Began)
+        //    {
+        //        if (canJump == true)
+        //        {
+        //            animations.Play("Jump");
+        //            Player.AddForce((18 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+        //            canJump = false;
+        //        }
+        //        else
+        //        {
+        //            animations.Play("Jump");
+        //            Player.AddForce((3 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+        //        }
+        //    }
         if(canJump == true)
         {
             animations.Play("Walk");
@@ -107,10 +88,10 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Player.velocity = -transform.right * playerSpeedLeft;
             }
-            else if(temp == 2)
-            {
-                Player.velocity = -transform.right * playerSpeedRight;
-            }
+            //else if(temp == 2)
+            //{
+            //    Player.velocity = -transform.right * playerSpeedRight;
+            //}
         }
         else
         {
