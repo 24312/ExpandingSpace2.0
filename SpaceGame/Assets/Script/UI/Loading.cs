@@ -15,6 +15,7 @@ public class Loading : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     public string LevelName;
+    float progress;
 
     private void Start()
     {
@@ -30,15 +31,16 @@ public class Loading : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync("MainGame");//??
         Debug.Log("loadLevel");
         loadingScreen.SetActive(true);//Laad effect op waar
-
+        operation.allowSceneActivation = false;
         while (!operation.isDone)
         {
-            float progress = Mathf.Clamp01(operation.progress / .9f);//Laadscherm berekenen.
-            Debug.Log("slider");
+            progress = Mathf.Clamp01(Mathf.Lerp(progress,operation.progress / .9f, operation.progress));//Laadscherm berekenen.
             slider.value = progress;//laadscherm tekenen
-
+            if (slider.value > 0.99)
+                operation.allowSceneActivation = true;
             yield return null;
         }
+
     }
 }
 //off ya go

@@ -24,8 +24,6 @@ public class restart : MonoBehaviour {
             //SceneManager.LoadScene("MainGame");
             SceneManager.LoadScene("Loading");
         }
-<<<<<<< HEAD
-=======
 
         for (int i = 0; i < Input.touchCount; ++i)
         {
@@ -34,7 +32,6 @@ public class restart : MonoBehaviour {
                 SceneManager.LoadScene("Loading");
             }
         }
->>>>>>> 93bd71bc932d6ea874ad542c333b2afd86571b2a
     }
 
 }
