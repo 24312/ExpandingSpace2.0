@@ -71,11 +71,11 @@ public class Gravity : MonoBehaviour {
         for (int i = 0; i < blackHole.Length; i++)
         {
             
-            float gravity2 = 70;
+            float gravity2 = 55;   //original 70
             Vector2 offset2 = blackHole[i].transform.position - transform.position;
 
             float gravitysqr2 = offset2.sqrMagnitude;
-            if (gravitysqr2 > 0.001f && gravitysqr2 < 100 && grounded == false)
+            if (gravitysqr2 > 0.001f && gravitysqr2 < 85 && grounded == false)    //original 100
             { 
                 rig2d.AddForce(gravity2 * offset2.normalized / gravitysqr2);
             }
