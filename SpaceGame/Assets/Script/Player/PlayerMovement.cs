@@ -14,19 +14,23 @@ public class PlayerMovement : MonoBehaviour {
     public float playerSpeedRight = 4f;
     int temp = 1;
     Quaternion zeroRotation;
+    
+    public ParticleSystem walkPartic;
+    public ParticleSystem jumpPartic;
+    public ParticleSystem jetpackPartic;
 
     private Gravity gravity;
-
+    private UnlockAchievements setIt;
 
     private void Awake()
     {
+        setIt = GetComponent<UnlockAchievements>();
         Player = GetComponent<Rigidbody2D>();
         gravity = GetComponent<Gravity>();
         animations = GetComponent<Animator>();
         playerSpeedLeft = PlayerPrefs.GetFloat("Dificulty", -4);
         playerSpeedRight = PlayerPrefs.GetFloat("Dificulty", -4);
     }
-  
     private void OnCollisionStay2D(Collision2D other)
     {
         if(other.gameObject.tag == "Planet")
@@ -48,36 +52,34 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            
+            jetpackPartic.Play();
             if (canJump == true)
             {
                 Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
                 canJump = false;
                 animations.Play("Jump");
+                jumpPartic.Play();
+                setIt.SetAchievements(1);
             }
             else
             {
                 Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
                 animations.Play("Jump");
             }
+            
         }
-        //if (Input.GetTouch(0).phase == TouchPhase.Began)
-        //    {
-        //        if (canJump == true)
-        //        {
-        //            animations.Play("Jump");
-        //            Player.AddForce((18 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-        //            canJump = false;
-        //        }
-        //        else
-        //        {
-        //            animations.Play("Jump");
-        //            Player.AddForce((3 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-        //        }
-        //    }
-        if(canJump == true)
+        if (Input.GetKeyUp(KeyCode.Space))
+            jetpackPartic.Stop();
+
+        if (canJump == true)
         {
             animations.Play("Walk");
+            walkPartic.Play();
+            jetpackPartic.Stop();
         }
+        if (canJump == false)
+            walkPartic.Stop();
 
     }
     public void RandomMove(string a)

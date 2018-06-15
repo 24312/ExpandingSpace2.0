@@ -73,7 +73,6 @@ public class EndlessBackGround : MonoBehaviour
         int modulodedIndex = index % BackGrounds.Length;
         Vector3 newPosition = new Vector3(BackGrounds[modulodedIndex].position.x + (layerWidth * BackGrounds.Length),
             BackGrounds[modulodedIndex].position.y, BackGrounds[modulodedIndex].position.z);
-        print(newPosition);
 
         BackGrounds[modulodedIndex].position = newPosition;
 

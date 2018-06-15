@@ -25,10 +25,6 @@ public class restart : MonoBehaviour {
             SceneManager.LoadScene("Loading");
         }
 
-
-
-
-
         for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
@@ -36,7 +32,6 @@ public class restart : MonoBehaviour {
                 SceneManager.LoadScene("Loading");
             }
         }
-
     }
 
 }

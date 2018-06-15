@@ -45,13 +45,11 @@ public class Gravity : MonoBehaviour {
                 if (currentAttractor != planet[i].transform)
                 {
                     rig2d.isKinematic = true;
-                    print("Nieuwe Attractor");
                     transform.up = Vector3.Lerp(transform.up, -offset, speed * Time.deltaTime);
 
                     if (Vector3.Distance(transform.up, -offset) <= snapDistance)
                     {
                         currentAttractor = planet[i].transform;
-                        print("snap");
                     }
                 } else {
                     rig2d.isKinematic = false;
@@ -71,11 +69,11 @@ public class Gravity : MonoBehaviour {
         for (int i = 0; i < blackHole.Length; i++)
         {
             
-            float gravity2 = 55;   //original 70
+            float gravity2 = 70;
             Vector2 offset2 = blackHole[i].transform.position - transform.position;
 
             float gravitysqr2 = offset2.sqrMagnitude;
-            if (gravitysqr2 > 0.001f && gravitysqr2 < 85 && grounded == false)    //original 100
+            if (gravitysqr2 > 0.001f && gravitysqr2 < 100 && grounded == false)
             { 
                 rig2d.AddForce(gravity2 * offset2.normalized / gravitysqr2);
             }
