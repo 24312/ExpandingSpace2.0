@@ -8,6 +8,7 @@ public class DestroyerScript : MonoBehaviour {
     //SceneController controller;
     public GameObject[] obj;
     public GameObject imageWarning;
+    public GameObject[] currentPlanets;
     public Transform planetSpawner;
     float _planetSpawner;
     private void Update()
@@ -30,7 +31,7 @@ public class DestroyerScript : MonoBehaviour {
         {
             Destroy(other.gameObject);
             //doet build map soms 2 keer of hellemaal niet....
-            BuildMap();
+            //BuildMap();
             return;
 
         }
@@ -48,6 +49,12 @@ public class DestroyerScript : MonoBehaviour {
         {
             Destroy(other.gameObject);
         }
+    }
+    private void FixedUpdate()
+    {
+        currentPlanets = GameObject.FindGameObjectsWithTag("Planet");
+        if (currentPlanets.Length < 3)
+            BuildMap();
     }
     public void BuildMap()
     {

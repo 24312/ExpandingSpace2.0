@@ -5,17 +5,35 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
 
     public Transform player;
+<<<<<<< HEAD
 	void Update () {
         transform.position = new Vector3(player.position.x + 3, 0, -10);
+	}
+=======
+    private float PosXPrev;
 
+    //private float difference = 0;
 
-
-
-        Vector3 position = transform.position;
-
-        float vertical = transform.position.x;
-        if (vertical < 0.0f)
-            position.y += vertical;
-        transform.position = new Vector3(player.position.x + 3, 0, -10);
+    void Start()
+    {
+        PosXPrev = transform.position.x;
     }
+    
+    void Update () {
+        /*difference = transform.position.x - player.position.x;
+        Debug.Log(player.position.x);
+        Debug.Log(transform.position.x);
+        Debug.Log(difference);
+        if(player.position.x + 3 > difference)
+        transform.position = new Vector3(player.position.x + 3, 0, -10);*/
+        if(PosXPrev < player.position.x + 3)
+        transform.position = new Vector3(player.position.x + 3, 0, -10);
+
+
+    }
+    void LateUpdate()
+    {
+        PosXPrev = transform.position.x;
+    }
+>>>>>>> 8aedf2ffe1d34fa023091998eedd8b283b4ccdc2
 }

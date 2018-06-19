@@ -45,13 +45,11 @@ public class Gravity : MonoBehaviour {
                 if (currentAttractor != planet[i].transform)
                 {
                     rig2d.isKinematic = true;
-                    print("Nieuwe Attractor");
                     transform.up = Vector3.Lerp(transform.up, -offset, speed * Time.deltaTime);
 
                     if (Vector3.Distance(transform.up, -offset) <= snapDistance)
                     {
                         currentAttractor = planet[i].transform;
-                        print("snap");
                     }
                 } else {
                     rig2d.isKinematic = false;

@@ -21,7 +21,6 @@ public class Loading : MonoBehaviour
     {
         //LevelName = PlayerPrefs.GetString("MainGame");
    
-        Debug.Log("findlevel");
         StartCoroutine(LoadAsynchronously("MainGame"));//??
     }
 
@@ -29,14 +28,13 @@ public class Loading : MonoBehaviour
     IEnumerator LoadAsynchronously(string LevelName)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync("MainGame");//??
-        Debug.Log("loadLevel");
         loadingScreen.SetActive(true);//Laad effect op waar
         operation.allowSceneActivation = false;
         while (!operation.isDone)
         {
             progress = Mathf.Clamp01(Mathf.Lerp(progress,operation.progress / .9f, operation.progress));//Laadscherm berekenen.
             slider.value = progress;//laadscherm tekenen
-            if (slider.value > 0.99)
+            if (slider.value == 1)
                 operation.allowSceneActivation = true;
             yield return null;
         }
