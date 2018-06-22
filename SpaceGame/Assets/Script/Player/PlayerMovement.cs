@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForceMedium = 3;
     public float jumpForceMax = 6f;
     public float playerSpeedLeft = -4f;
-    public float playerSpeedRight = 4f;
+    public bool ifDead = false;
     int temp = 1;
     Quaternion zeroRotation;
     
@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour {
         gravity = GetComponent<Gravity>();
         animations = GetComponent<Animator>();
         playerSpeedLeft = PlayerPrefs.GetFloat("Dificulty", -4);
-        playerSpeedRight = PlayerPrefs.GetFloat("Dificulty", -4);
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -50,36 +49,45 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (ifDead == false)
         {
-            
-            jetpackPartic.Play();
+            if (Input.GetKey(KeyCode.Space))
+            {
+
+                jetpackPartic.Play();
+                if (canJump == true)
+                {
+                    Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    canJump = false;
+                    animations.Play("Jump");
+                    jumpPartic.Play();
+                    setIt.SetAchievements(1);
+                }
+                else
+                {
+                    Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    animations.Play("Jump");
+                }
+
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+                jetpackPartic.Stop();
+
             if (canJump == true)
             {
-                Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                canJump = false;
-                animations.Play("Jump");
-                jumpPartic.Play();
-                setIt.SetAchievements(1);
+                animations.Play("Walk");
+                walkPartic.Play();
+                jetpackPartic.Stop();
+                setIt.SetAchievements(2);
             }
-            else
-            {
-                Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                animations.Play("Jump");
-            }
-            
+            if (canJump == false)
+                walkPartic.Stop();
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-            jetpackPartic.Stop();
-
-        if (canJump == true)
+        else
         {
-            animations.Play("Walk");
-            walkPartic.Play();
-            jetpackPartic.Stop();
-        }
-        if (canJump == false)
+            Player.velocity = transform.right * 0;
             walkPartic.Stop();
+        }
 
     }
     public void RandomMove(string a)
@@ -90,10 +98,6 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Player.velocity = -transform.right * playerSpeedLeft;
             }
-            //else if(temp == 2)
-            //{
-            //    Player.velocity = -transform.right * playerSpeedRight;
-            //}
         }
         else
         {

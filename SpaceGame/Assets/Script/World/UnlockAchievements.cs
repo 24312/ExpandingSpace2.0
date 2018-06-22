@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnlockAchievements : MonoBehaviour {
 
-    int jumps;
+    public int jumps;
     float distanceTravelledPlanet;
     int died;
     int landedPlanets;
@@ -22,6 +22,7 @@ public class UnlockAchievements : MonoBehaviour {
     }
     private void FixedUpdate()
     {
+
         if (jumps >= 300)
             Debug.Log("achievement unlocked!");
     }
@@ -29,12 +30,12 @@ public class UnlockAchievements : MonoBehaviour {
     {
         if(a == 1)
         {
-            Debug.Log(jumps);
             jumps++;
             PlayerPrefs.SetInt("Jumps", jumps);
         }
         if (a == 2)
         {
+            
             distanceTravelledPlanet++;
             PlayerPrefs.SetFloat("distanceTravelledPlanet", distanceTravelledPlanet);
         }

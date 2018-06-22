@@ -7,6 +7,16 @@ public class ResetScore : MonoBehaviour {
     private bool E = false;
     private bool S = false;
     private bool T = false;
+    float score;
+    private void Awake()
+    {
+        score = PlayerPrefs.GetFloat("score", 0);
+        Debug.Log(score);
+        if(score < 1000)
+        {
+            PlayerPrefs.SetInt("DiedAtStart", 1);
+        }
+    }
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -34,5 +44,6 @@ public class ResetScore : MonoBehaviour {
             Debug.Log("deleted highscores");
             return;
         }
+        
     }
 }

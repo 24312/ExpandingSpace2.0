@@ -31,5 +31,8 @@ public class FollowPlayer : MonoBehaviour {
     {
         PosXPrev = transform.position.x;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5c47fbe74e3f0e99df43ebfd6c3bb42888992ed
 }
