@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212329162852860852}
   - component: {fileID: 50564912562091688}
   - component: {fileID: 58498789950249404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planet9
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95522930160717752}
   - component: {fileID: 50047370273171664}
   - component: {fileID: 58921843417489604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Oxygen Special (1)
   m_TagString: Oxygen Special
   m_Icon: {fileID: 0}
