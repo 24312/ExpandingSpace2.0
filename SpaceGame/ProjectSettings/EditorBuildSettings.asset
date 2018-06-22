@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Achievements.unity
     guid: aaba9abc8eb69c44a9164d7b1347bbd6
   - enabled: 1
-    path: Assets/Scenes/Credits(work in progress).unity
-    guid: 8278f05306afd4341a13c06be0b45e64
+    path: Assets/Credit objects/credits af.unity
+    guid: 1d3051bcd319d8d4ba94c39d6e65547e
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 0c011a5d114a1b2479aa3b7129be29c0
