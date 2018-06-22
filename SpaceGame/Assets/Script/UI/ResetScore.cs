@@ -11,7 +11,7 @@ public class ResetScore : MonoBehaviour {
     private void Awake()
     {
         score = PlayerPrefs.GetFloat("score", 0);
-        Debug.Log(score);
+
         if(score < 1000)
         {
             PlayerPrefs.SetInt("DiedAtStart", 1);

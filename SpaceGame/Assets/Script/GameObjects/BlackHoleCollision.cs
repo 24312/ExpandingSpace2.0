@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 public class BlackHoleCollision : MonoBehaviour {
     private Collider2D planet;
     private Collider2D thisHole;
+    private Rigidbody2D holeCollider;
     private void Awake()
     {
         thisHole = GetComponent<Collider2D>();
+        holeCollider = GetComponent<Rigidbody2D>();
+        Physics2D.IgnoreLayerCollision(8, 9);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,7 +22,6 @@ public class BlackHoleCollision : MonoBehaviour {
         if(collision.gameObject.tag == "Planet")
         {
             planet = collision.gameObject.GetComponent<Collider2D>();
-            Physics2D.IgnoreCollision(planet, thisHole);
         }
     }
 }

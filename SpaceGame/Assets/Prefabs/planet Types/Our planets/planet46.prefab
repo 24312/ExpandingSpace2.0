@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212288721486317304}
   - component: {fileID: 50378974687886620}
   - component: {fileID: 68612310341084092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mountains3_1-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212072262427264050}
   - component: {fileID: 50102368356059186}
   - component: {fileID: 58682464886081312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planet46
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 95659148714386212}
   - component: {fileID: 50632962772463052}
   - component: {fileID: 58453352596863826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Oxygen Special (1)
   m_TagString: Oxygen Special
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 212134704980765942}
   - component: {fileID: 50326041938164796}
   - component: {fileID: 68095295165901544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mountains3_1-01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
