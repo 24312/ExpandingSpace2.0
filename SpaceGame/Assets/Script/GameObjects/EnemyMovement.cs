@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D Player;
     public float playerSpeedLeft = -4f;
     Quaternion zeroRotation;
+    public bool checkKilled = false;
 
 
 
@@ -15,6 +16,13 @@ public class EnemyMovement : MonoBehaviour
     {
         Player = GetComponent<Rigidbody2D>();
         RandomMove("Enable");
+    }
+    private void FixedUpdate()
+    {
+        if (checkKilled == true)
+        {
+            Player.velocity = transform.right * 0;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other)

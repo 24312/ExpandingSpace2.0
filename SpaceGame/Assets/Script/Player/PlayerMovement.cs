@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -11,13 +12,15 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForceMedium = 3;
     public float jumpForceMax = 6f;
     public float playerSpeedLeft = -4f;
-    public float playerSpeedRight = 4f;
+    public bool ifDead = false;
     int temp = 1;
     Quaternion zeroRotation;
     
     public ParticleSystem walkPartic;
     public ParticleSystem jumpPartic;
     public ParticleSystem jetpackPartic;
+    private AudioSource walkSound;
+    public AudioSource jetpackSound;
 
     private Gravity gravity;
     private UnlockAchievements setIt;
@@ -28,8 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         Player = GetComponent<Rigidbody2D>();
         gravity = GetComponent<Gravity>();
         animations = GetComponent<Animator>();
-        playerSpeedLeft = PlayerPrefs.GetFloat("Dificulty", -4);
-        playerSpeedRight = PlayerPrefs.GetFloat("Dificulty", -4);
+        walkSound = GetComponent<AudioSource>();
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -50,36 +52,62 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (ifDead == false)
         {
-            
-            jetpackPartic.Play();
-            if (canJump == true)
+            if (Input.GetKey(KeyCode.Space))
             {
-                Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                canJump = false;
-                animations.Play("Jump");
-                jumpPartic.Play();
-                setIt.SetAchievements(1);
+
+                jetpackPartic.Play();
+                if (canJump == true)
+                {
+                    Player.AddForce((13 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    canJump = false;
+                    animations.Play("Jump");
+                    jumpPartic.Play();
+                    setIt.SetAchievements(1);
+                }
+                else
+                {
+                    Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    animations.Play("Jump");
+                    if (jetpackSound.isPlaying == false)
+                    {
+                        jetpackSound.Play();
+                    }
+                }
+
             }
             else
             {
-                Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                animations.Play("Jump");
+                jetpackSound.Stop();
             }
-            
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-            jetpackPartic.Stop();
 
-        if (canJump == true)
-        {
-            animations.Play("Walk");
-            walkPartic.Play();
-            jetpackPartic.Stop();
+            if (Input.GetKeyUp(KeyCode.Space))
+                jetpackPartic.Stop();
+
+            if (canJump == true)
+            {
+                animations.Play("Walk");
+                walkPartic.Play();
+                if(walkSound.isPlaying == false)
+                {
+                    walkSound.Play();
+                }
+                jetpackPartic.Stop();
+                setIt.SetAchievements(2);
+            }
+            if (canJump == false)
+            {
+                walkSound.Stop();
+                walkPartic.Stop();
+            }
+                
         }
-        if (canJump == false)
+        else
+        {
+            Player.velocity = transform.right * 0;
             walkPartic.Stop();
+        }
 
     }
     public void RandomMove(string a)
@@ -90,10 +118,6 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Player.velocity = -transform.right * playerSpeedLeft;
             }
-            //else if(temp == 2)
-            //{
-            //    Player.velocity = -transform.right * playerSpeedRight;
-            //}
         }
         else
         {

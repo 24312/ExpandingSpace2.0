@@ -60,7 +60,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Check you're left corner. if a warning sign apears it means that a blackhole
+  m_Text: Check your left corner. if a warning sign apears it means that a blackhole
     is on it's way!
 --- !u!222 &222138119434464100
 CanvasRenderer:
