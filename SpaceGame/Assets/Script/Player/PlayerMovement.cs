@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour {
     public ParticleSystem walkPartic;
     public ParticleSystem jumpPartic;
     public ParticleSystem jetpackPartic;
+    private AudioSource walkSound;
+    public AudioSource jetpackSound;
 
     private Gravity gravity;
     private UnlockAchievements setIt;
@@ -28,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         Player = GetComponent<Rigidbody2D>();
         gravity = GetComponent<Gravity>();
         animations = GetComponent<Animator>();
-        playerSpeedLeft = PlayerPrefs.GetFloat("Dificulty", -4);
+        walkSound = GetComponent<AudioSource>();
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour {
                 jetpackPartic.Play();
                 if (canJump == true)
                 {
-                    Player.AddForce((15f * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    Player.AddForce((13 * jetPackJump) * transform.up, ForceMode2D.Impulse);
                     canJump = false;
                     animations.Play("Jump");
                     jumpPartic.Play();
@@ -67,9 +70,18 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
                     animations.Play("Jump");
+                    if (jetpackSound.isPlaying == false)
+                    {
+                        jetpackSound.Play();
+                    }
                 }
 
             }
+            else
+            {
+                jetpackSound.Stop();
+            }
+
             if (Input.GetKeyUp(KeyCode.Space))
                 jetpackPartic.Stop();
 
@@ -77,11 +89,19 @@ public class PlayerMovement : MonoBehaviour {
             {
                 animations.Play("Walk");
                 walkPartic.Play();
+                if(walkSound.isPlaying == false)
+                {
+                    walkSound.Play();
+                }
                 jetpackPartic.Stop();
                 setIt.SetAchievements(2);
             }
             if (canJump == false)
+            {
+                walkSound.Stop();
                 walkPartic.Stop();
+            }
+                
         }
         else
         {

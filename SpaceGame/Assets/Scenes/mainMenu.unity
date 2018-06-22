@@ -246,7 +246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -303.15, y: -185.9}
+  m_AnchoredPosition: {x: -303.15, y: -155.15}
   m_SizeDelta: {x: 193.7, y: 56.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352456213
@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.19, y: -142.7}
-  m_SizeDelta: {x: 172.81, y: 166.21}
+  m_AnchoredPosition: {x: -19.6, y: -126.8}
+  m_SizeDelta: {x: 124, y: 113.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436486318
 MonoBehaviour:
@@ -493,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -238.05, y: 60}
+  m_AnchoredPosition: {x: -240, y: 56}
   m_SizeDelta: {x: 231.8, y: 53.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510527632
@@ -617,8 +617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -325.75, y: 161}
-  m_SizeDelta: {x: 148.5, y: 56.5}
+  m_AnchoredPosition: {x: -325.75, y: 143}
+  m_SizeDelta: {x: 148.5, y: 41.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643246801
 MonoBehaviour:
@@ -921,8 +921,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918657279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.006, y: -0.102, z: 0}
-  m_LocalScale: {x: 0.92595565, y: 0.9367407, z: 1}
+  m_LocalPosition: {x: 0.207, y: -0.018007323, z: 0.338}
+  m_LocalScale: {x: 0.9511079, y: 0.93282604, z: 0.991971}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1131,8 +1131,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1618438861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.201, y: 0.083992675, z: 0.338}
+  m_LocalScale: {x: 1.0271635, y: 0.995821, z: 0.991971}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1148,6 +1148,7 @@ GameObject:
   - component: {fileID: 1620764521}
   - component: {fileID: 1620764520}
   - component: {fileID: 1620764519}
+  - component: {fileID: 1620764523}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1218,6 +1219,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1620764523
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620764518}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 069f01b765367434791dc7caf75d5724, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1871831280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252, y: -59}
+  m_AnchoredPosition: {x: -263, y: -45.5}
   m_SizeDelta: {x: 212.7, y: 49.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081592079
