@@ -10,11 +10,8 @@ public class DestroyerScript : MonoBehaviour {
     public GameObject imageWarning;
     public GameObject[] currentPlanets;
     public Transform planetSpawner;
-    float _planetSpawner;
-    private void Update()
-    {
-        _planetSpawner = planetSpawner.position.x;
-    }
+    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         
@@ -58,7 +55,7 @@ public class DestroyerScript : MonoBehaviour {
     }
     public void BuildMap()
     {
-            Vector2 spawnLocation = new Vector2(_planetSpawner, 4 - Random.Range(1, 8));
+            Vector2 spawnLocation = new Vector2(planetSpawner.position.x + Random.Range(1,3), 4 - Random.Range(1, 8));
             GameObject holes = Instantiate(obj[Random.Range(0, obj.GetLength(0))], spawnLocation, Quaternion.identity);
     }
 
