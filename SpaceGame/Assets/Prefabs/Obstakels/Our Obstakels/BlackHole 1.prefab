@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689634205273806}
   - component: {fileID: 212040555638613166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blackhole picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,10 @@ GameObject:
   - component: {fileID: 50723755746889670}
   - component: {fileID: 114341521793713992}
   - component: {fileID: 114525938932541510}
-  m_Layer: 0
+  - component: {fileID: 114472968183685622}
+  - component: {fileID: 82561290948368010}
+  - component: {fileID: 58952356051096420}
+  m_Layer: 9
   m_Name: BlackHole 1
   m_TagString: BlackHole
   m_Icon: {fileID: 0}
@@ -57,7 +60,7 @@ GameObject:
   - component: {fileID: 4796604087718268}
   - component: {fileID: 198905601761967702}
   - component: {fileID: 199059641872697906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _Rim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +77,7 @@ GameObject:
   - component: {fileID: 4719081183788480}
   - component: {fileID: 198394125962133266}
   - component: {fileID: 199903102886110262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _BlackOrb_BACKUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4729112417898770}
   - component: {fileID: 182418105063009842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WindZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +110,7 @@ GameObject:
   - component: {fileID: 4515075669214476}
   - component: {fileID: 198530644410824942}
   - component: {fileID: 199681664715508314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _Waves_Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +127,7 @@ GameObject:
   - component: {fileID: 4670619087349470}
   - component: {fileID: 198857716878936066}
   - component: {fileID: 199962989291653898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _Waves_Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373439802923480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.20570707, y: 2.2692251, z: -2}
+  m_LocalPosition: {x: 23.16761, y: -0.13832474, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4719081183788480}
@@ -239,7 +242,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.5836768
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -248,6 +251,101 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58952356051096420
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373439802923480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09, y: -0.73}
+  serializedVersion: 2
+  m_Radius: 0.71
+--- !u!82 &82561290948368010
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373439802923480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f33cbd39ba714dd498f38c5520327c32, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114341521793713992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +358,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackHoleSpeed: 0.5
+--- !u!114 &114472968183685622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373439802923480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9190bd2af9e248458a9b4f099e39a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114525938932541510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7112,7 +7221,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1098860979
+  randomSeed: -1034966248
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10473,7 +10582,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1951672554
+  randomSeed: -1848722916
   InitialModule:
     serializedVersion: 3
     enabled: 1

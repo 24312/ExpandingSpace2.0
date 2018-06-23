@@ -20,6 +20,7 @@ public class ScoreMeter : MonoBehaviour {
     {
         scorePlayer = Vector3.Distance(player.position, startDistance.position);
         scorePlayer = Mathf.Round(scorePlayer * 100f);
+        PlayerPrefs.SetFloat("score", scorePlayer);
 
         scoreLabel.text = "Miles Travelled: " + scorePlayer;
         highScoreLabel.text = " HighScore: " + highScore;
@@ -32,6 +33,7 @@ public class ScoreMeter : MonoBehaviour {
             PlayerPrefs.SetFloat("HighScore", highScore);
             PlayerPrefs.Save();
         }
+
     }
 
 }

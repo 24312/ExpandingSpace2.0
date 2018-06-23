@@ -60,7 +60,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Don't forget to use you're jetpack. It can help in tricky situations that
+  m_Text: Don't forget to use your jetpack. It can help in tricky situations that
     look imposible!
 --- !u!222 &222670749105117808
 CanvasRenderer:

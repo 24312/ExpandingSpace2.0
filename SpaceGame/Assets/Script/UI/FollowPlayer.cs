@@ -6,16 +6,15 @@ public class FollowPlayer : MonoBehaviour {
 
     public Transform player;
 <<<<<<< HEAD
-	void Update () {
-        transform.position = new Vector3(player.position.x + 3, 0, -10);
-	}
 =======
+
+>>>>>>> 601894cf5dfce11605b0a78bdc1ddfe390b732ad
     private float PosXPrev;
 
     //private float difference = 0;
 
     void Start()
-    {
+    {   
         PosXPrev = transform.position.x;
     }
     
@@ -35,5 +34,11 @@ public class FollowPlayer : MonoBehaviour {
     {
         PosXPrev = transform.position.x;
     }
->>>>>>> 8aedf2ffe1d34fa023091998eedd8b283b4ccdc2
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> f51eb9a8a4786c0fa256bae6f955ce22bdaa5c1d
+>>>>>>> 601894cf5dfce11605b0a78bdc1ddfe390b732ad
 }
