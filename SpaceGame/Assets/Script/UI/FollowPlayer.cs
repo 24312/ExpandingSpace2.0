@@ -5,10 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
 
     public Transform player;
-<<<<<<< HEAD
-=======
 
->>>>>>> 601894cf5dfce11605b0a78bdc1ddfe390b732ad
     private float PosXPrev;
 
     //private float difference = 0;
@@ -34,11 +31,4 @@ public class FollowPlayer : MonoBehaviour {
     {
         PosXPrev = transform.position.x;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> f51eb9a8a4786c0fa256bae6f955ce22bdaa5c1d
->>>>>>> 601894cf5dfce11605b0a78bdc1ddfe390b732ad
 }

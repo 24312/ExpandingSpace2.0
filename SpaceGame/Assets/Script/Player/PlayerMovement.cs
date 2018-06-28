@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
             }
             else
             {
-                jetpackSound.Stop();
+                //jetpackSound.Stop();
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
