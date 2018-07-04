@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody2D Player;
     Animator animations;
     public bool canJump = false;
-    public float jetPackJump = 0.2f;
+    public float jetPackJump = 0.27f;
     public float jumpForceMedium = 3;
     public float jumpForceMax = 6f;
     public float playerSpeedLeft = -4f;
