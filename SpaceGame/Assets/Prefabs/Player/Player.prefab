@@ -342,10 +342,11 @@ MonoBehaviour:
   jumpForceMedium: 5
   jumpForceMax: 8
   playerSpeedLeft: -3
-  playerSpeedRight: 3
+  ifDead: 0
   walkPartic: {fileID: 198320485428016900}
   jumpPartic: {fileID: 198019659144266096}
   jetpackPartic: {fileID: 198920135896990530}
+  jetpackSound: {fileID: 0}
 --- !u!114 &114895096287406800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf00bbbca92e05541b647908da163f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumps: 0
 --- !u!198 &198019659144266096
 ParticleSystem:
   m_ObjectHideFlags: 1

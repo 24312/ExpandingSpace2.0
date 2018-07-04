@@ -82,3 +82,5 @@ public class Gravity : MonoBehaviour {
     }
 
 }
+
+//gravity 40 ???
