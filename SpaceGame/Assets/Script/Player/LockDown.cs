@@ -8,6 +8,8 @@ public class LockDown : MonoBehaviour {
 
     private Transform player;
 
+    private PlayerMovement setDead;
+
     private void Awake()
     {
         player = GetComponent<Transform>();
@@ -16,17 +18,23 @@ public class LockDown : MonoBehaviour {
     {
         if(player.position.x <= -10)
         {
-            SceneManager.LoadScene("gameOver");
+            setDead = GetComponent<PlayerMovement>();
+            setDead.ifDead = true;
+            setDead.Constraints();
             return;
         }
         if(player.position.y > 7)
         {
-            SceneManager.LoadScene("gameOver");
+            setDead = GetComponent<PlayerMovement>();
+            setDead.ifDead = true;
+            setDead.Constraints();
             return;
         }
         if(player.position.y < -7)
         {
-            SceneManager.LoadScene("gameOver");
+            setDead = GetComponent<PlayerMovement>();
+            setDead.ifDead = true;
+            setDead.Constraints();
             return;
         }
     }

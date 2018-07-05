@@ -10,6 +10,7 @@ public class DestroyerScript : MonoBehaviour {
     public GameObject imageWarning;
     public GameObject[] currentPlanets;
     public Transform planetSpawner;
+    private PlayerMovement constraints;
     
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -17,7 +18,9 @@ public class DestroyerScript : MonoBehaviour {
         
         if(other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("gameOver");
+            constraints = other.gameObject.GetComponent<PlayerMovement>();
+            constraints.Constraints();
+            constraints.ifDead = true;
             return;
         }
         else if (other.gameObject.tag == "Destroyer")

@@ -10,6 +10,8 @@ TagManager:
   - Oxygen
   - Oxygen Special
   - Warning
+  - GameOver
+  - GameOver2
   layers:
   - Default
   - TransparentFX

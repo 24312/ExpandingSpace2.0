@@ -7,14 +7,16 @@ public class DestroScriptPlanet : MonoBehaviour
 {
 
     //SceneController controller;
+    private PlayerMovement constraints;
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            //Hier kan de gameover zijn
-            SceneManager.LoadScene("gameOver");
+            constraints = other.gameObject.GetComponent<PlayerMovement>();
+            constraints.Constraints();
+            constraints.ifDead = true;
             return;
         }
         else if (other.tag == "Destroyer")

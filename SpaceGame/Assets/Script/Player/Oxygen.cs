@@ -13,6 +13,7 @@ public class Oxygen : MonoBehaviour {
     public Animator oxygen;
     public Animator oxygenSpecial;
     private CircleCollider2D oxygenCollider;
+    private PlayerMovement setDead;
 
     private void FixedUpdate()
     {
@@ -22,7 +23,9 @@ public class Oxygen : MonoBehaviour {
        
         if(oxygenTime <= 0)
         {
-            SceneManager.LoadScene("gameOver");
+            setDead = GetComponent<PlayerMovement>();
+            setDead.ifDead = true;
+            setDead.Constraints();
             return;
         }
     }

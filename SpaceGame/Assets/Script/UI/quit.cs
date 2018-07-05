@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class quit : MonoBehaviour
 {
 
-    public Button btn;
+    private Button btn;
 
     // Use this for initialization
     void Start()
     {
+        btn = GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 

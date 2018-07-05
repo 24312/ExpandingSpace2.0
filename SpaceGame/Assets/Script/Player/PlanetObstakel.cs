@@ -39,6 +39,8 @@ public class PlanetObstakel : MonoBehaviour {
     }
     void LoadScene()
     {
-        SceneManager.LoadScene("gameOver");
+        GameObject quitBtn = GameObject.FindGameObjectWithTag("GameOver2");
+        GameObject respawnBtn = GameObject.FindGameObjectWithTag("GameOver");
+
     }
 }
