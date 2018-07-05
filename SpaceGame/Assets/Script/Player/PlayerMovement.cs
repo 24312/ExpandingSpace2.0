@@ -119,8 +119,10 @@ public class PlayerMovement : MonoBehaviour {
     }
     private void Update()
     {
-        for (int i = 0; i < Input.touchCount; ++i)
+        if(ifDead != true)
         {
+            for (int i = 0; i < Input.touchCount; ++i)
+            {
                 jetpackPartic.Play();
                 if (canJump == true)
                 {
@@ -139,7 +141,9 @@ public class PlayerMovement : MonoBehaviour {
                         jetpackSound.Play();
                     }
                 }
+            }
         }
+        
     }
     public void RandomMove(string a)
     {
