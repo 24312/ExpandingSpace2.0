@@ -7,7 +7,7 @@ public class Gravity : MonoBehaviour {
     //makes the variables and arrays it for multiple object use
     public GameObject[] planet;
     public GameObject[] blackHole;
-    public float gravity = 30f;
+    public float gravity = 40f;
     public float speed = 1;
     public float snapDistance = 0.7f;
     private bool grounded = true;
@@ -82,3 +82,5 @@ public class Gravity : MonoBehaviour {
     }
 
 }
+
+//gravity 40 ???
