@@ -17,7 +17,7 @@ public class quit : MonoBehaviour
 
     private void TaskOnClick()
     {
-        SceneManager.LoadScene("mainMenu");
+        SceneManager.LoadScene("MainMenu");
         
     }
 

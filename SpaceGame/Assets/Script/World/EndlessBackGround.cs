@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class EndlessBackGround : MonoBehaviour
 {
-    public float scrollSpeed = 0.5f;
-    public Renderer rend;
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
-    }
-    void FixedUpdate()
-    {
-        //Debug.Log(rend.material.mainTextureOffset);
-        float offset = Time.time * scrollSpeed;
-        rend.material.mainTextureOffset = new Vector2(offset, 0);
-    }
-
-    /*
 
     public Transform[] BackGrounds;
    
@@ -43,12 +29,43 @@ public class EndlessBackGround : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(spawnOffset);
         Debug.DrawLine(new Vector3(spawnOffset, -10, 0), new Vector3(spawnOffset, 10, 0));
         if (Player.position.x >= spawnOffset)
         {
             MoveBackGround();
         }
+        /*
+        if (currentXpos < Cam.position.x + 20)
+        {
+            if (OneOrTwo)
+            {
+                BackGround1.localPosition = new Vector2(BackGround1.localPosition.x + currentXpos, 0);
+            }
+            else
+            {
+                BackGround2.localPosition = new Vector2(BackGround2.localPosition.x + currentXpos, 0);
+            }
+
+            currentXpos += currentXpos;
+            OneOrTwo = !OneOrTwo;
+        }
+
+
+        if (currentXpos > Cam.position.x + 15)
+        {
+            if (OneOrTwo)
+            {
+                BackGround2.localPosition = new Vector2(BackGround2.localPosition.x - currentXpos, 0);
+            }
+            else
+            {
+                BackGround1.localPosition = new Vector2(BackGround1.localPosition.x - currentXpos, 0);
+            }
+
+            currentXpos -= currentXpos;
+            OneOrTwo = !OneOrTwo;
+        }
+        */
     }
 
     public void MoveBackGround()
@@ -62,5 +79,5 @@ public class EndlessBackGround : MonoBehaviour
         index++;
 
         spawnOffset += layerWidth;
-    }*/
+    }
 }

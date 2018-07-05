@@ -11,7 +11,7 @@ public class FollowPlayer : MonoBehaviour {
     //private float difference = 0;
 
     void Start()
-    {   
+    {
         PosXPrev = transform.position.x;
     }
     
