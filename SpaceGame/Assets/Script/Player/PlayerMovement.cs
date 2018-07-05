@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody2D Player;
     Animator animations;
     public bool canJump = false;
-    public float jetPackJump = 0.2f;
+    public float jetPackJump = 0.27f;
     public float jumpForceMedium = 3;
     public float jumpForceMax = 6f;
     public float playerSpeedLeft = -4f;
@@ -76,11 +76,19 @@ public class PlayerMovement : MonoBehaviour {
             //        }
             //    }
 
+<<<<<<< HEAD
             //}
             //else
             //{
             //    jetpackSound.Stop();
             //}
+=======
+            }
+            else
+            {
+                //jetpackSound.Stop();
+            }
+>>>>>>> 51a81df919acc6d221e56d51c599d09b7a4b21d4
 
             if (Input.GetKeyUp(KeyCode.Space))
                 jetpackPartic.Stop();
@@ -151,3 +159,4 @@ public class PlayerMovement : MonoBehaviour {
 
 }
 
+// jetpackjump 0.27 ???
