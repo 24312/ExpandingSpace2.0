@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23e850cacfedd54799c9bffa34af74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  scrollSpeed: 0.005
   rend: {fileID: 7388545}
 --- !u!198 &121318226 stripped
 ParticleSystem:

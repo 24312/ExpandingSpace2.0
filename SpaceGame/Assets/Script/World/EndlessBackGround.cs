@@ -8,13 +8,12 @@ public class EndlessBackGround : MonoBehaviour
     public Renderer rend;
     void Start()
     {
-        //rend = GetComponent<Renderer>();
+        rend = GetComponent<Renderer>();
     }
     void FixedUpdate()
     {
         //Debug.Log(rend.material.mainTextureOffset);
         float offset = Time.time * scrollSpeed;
-        Debug.Log(offset);
         rend.material.mainTextureOffset = new Vector2(offset, 0);
     }
 
