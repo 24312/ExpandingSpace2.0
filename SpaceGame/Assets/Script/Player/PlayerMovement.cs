@@ -54,33 +54,33 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (ifDead == false)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
+            //if (Input.GetKey(KeyCode.Space))
+            //{
 
-                jetpackPartic.Play();
-                if (canJump == true)
-                {
-                    Player.AddForce((13 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                    canJump = false;
-                    animations.Play("Jump");
-                    jumpPartic.Play();
-                    setIt.SetAchievements(1);
-                }
-                else
-                {
-                    Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
-                    animations.Play("Jump");
-                    if (jetpackSound.isPlaying == false)
-                    {
-                        jetpackSound.Play();
-                    }
-                }
+            //    jetpackPartic.Play();
+            //    if (canJump == true)
+            //    {
+            //        Player.AddForce((13 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+            //        canJump = false;
+            //        animations.Play("Jump");
+            //        jumpPartic.Play();
+            //        setIt.SetAchievements(1);
+            //    }
+            //    else
+            //    {
+            //        Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+            //        animations.Play("Jump");
+            //        if (jetpackSound.isPlaying == false)
+            //        {
+            //            jetpackSound.Play();
+            //        }
+            //    }
 
-            }
-            else
-            {
-                jetpackSound.Stop();
-            }
+            //}
+            //else
+            //{
+            //    jetpackSound.Stop();
+            //}
 
             if (Input.GetKeyUp(KeyCode.Space))
                 jetpackPartic.Stop();
@@ -109,6 +109,30 @@ public class PlayerMovement : MonoBehaviour {
             walkPartic.Stop();
         }
 
+    }
+    private void Update()
+    {
+        for (int i = 0; i < Input.touchCount; ++i)
+        {
+                jetpackPartic.Play();
+                if (canJump == true)
+                {
+                    Player.AddForce((13 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    canJump = false;
+                    animations.Play("Jump");
+                    jumpPartic.Play();
+                    setIt.SetAchievements(1);
+                }
+                else
+                {
+                    Player.AddForce((1 * jetPackJump) * transform.up, ForceMode2D.Impulse);
+                    animations.Play("Jump");
+                    if (jetpackSound.isPlaying == false)
+                    {
+                        jetpackSound.Play();
+                    }
+                }
+        }
     }
     public void RandomMove(string a)
     {

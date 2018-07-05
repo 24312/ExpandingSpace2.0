@@ -176,8 +176,8 @@ Canvas:
   m_GameObject: {fileID: 226926803}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2113789401}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -309,8 +309,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 276803126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.024, z: 10}
-  m_LocalScale: {x: 0.84161717, y: 0.9367071, z: 1}
+  m_LocalPosition: {x: -0, y: -0.024, z: 10}
+  m_LocalScale: {x: 0.928244, y: 0.9367071, z: 1}
   m_Children: []
   m_Father: {fileID: 2113789402}
   m_RootOrder: 0
@@ -537,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584038385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.808, y: 1.673, z: 0}
+  m_LocalPosition: {x: 2.97, y: 1.673, z: 0}
   m_LocalScale: {x: 0.2613111, y: 0.3201189, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1152,7 +1152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444654692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.94, y: -2.68, z: 0}
+  m_LocalPosition: {x: 3.02, y: -2.6, z: 0}
   m_LocalScale: {x: 0.2613111, y: 0.3201189, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1372,7 +1372,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608209001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.68, y: 1.71, z: 0}
+  m_LocalPosition: {x: 6.15, y: 1.71, z: 0}
   m_LocalScale: {x: 0.2613111, y: 0.3201189, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1598,8 +1598,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580.02, y: 149.6}
-  m_SizeDelta: {x: 119.96, y: 113.1}
+  m_AnchoredPosition: {x: -329, y: 80.8}
+  m_SizeDelta: {x: 58.7, y: 58.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724704698
 MonoBehaviour:
