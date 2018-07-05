@@ -2303,7 +2303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: You died at the start of the game your such an erwin!
+  m_Text: You died at the start of the game you are such an erwin!
 --- !u!222 &1138462720
 CanvasRenderer:
   m_ObjectHideFlags: 0
